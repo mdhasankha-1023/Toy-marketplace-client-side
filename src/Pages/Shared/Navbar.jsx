@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/company_logo/logo.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import UserProfile from '../Home/UserProfile';
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext)
+    console.log(user)
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto justify-between">
             <div className="navbar-center lg:w-2/5 lg:navbar-start">
@@ -40,12 +44,19 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end  gap-4 btn-group invisible lg:visible">
-                <Link to='/sign-in'>
-                    <button className="btn-sm bg-[#F5B120] hover:bg-[#ac790c] text-white rounded-md">Sign in</button>
-                </Link>
-                <Link to='/sign-up'>
-                    <button className="btn-sm bg-[#EA624C] hover:bg-[#b3402e] text-white rounded-md">Sign up</button>
-                </Link>
+            {
+                user ? 
+                <UserProfile></UserProfile>
+                :
+                <>
+                        <Link to='/sign-in'>
+                            <button className="btn-sm bg-[#F5B120] hover:bg-[#ac790c] text-white rounded-md">Sign in</button>
+                        </Link>
+                        <Link to='/sign-up'>
+                            <button className="btn-sm bg-[#EA624C] hover:bg-[#b3402e] text-white rounded-md">Sign up</button>
+                        </Link>
+                    </>
+                }
             </div>
 
         </div>
