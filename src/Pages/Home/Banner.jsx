@@ -10,7 +10,7 @@ import img2 from '../../assets/banner_img/6.png'
 const Banner = () => {
     return (
         <>
-            <div className="w-full image-full relative">
+            <div className="w-full image-full relative mt-8">
                 <figure><img src={banner} alt="Shoes" /></figure>
                 <div className="card-body absolute top-0 left-0 h-full">
                     <h2 className="card-title mt-24 text-5xl text-white font-bold">PICK THE BEST TOY CAR <br /> FOR YOUR KIDS</h2>

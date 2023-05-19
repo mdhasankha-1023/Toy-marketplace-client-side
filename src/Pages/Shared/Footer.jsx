@@ -5,7 +5,7 @@ import { FaBeer, FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
     return (
         <>
-            <footer className="footer p-10 bg-[#EA624C] font-bold text-white">
+            <footer className="footer p-10 bg-[#EA624C] font-bold text-white mt-8">
                 <div>
                     <img className='w-[200px]' src={logo} alt="" />
                     <p className='font-bold'>TOY CARS Industries Ltd.<br />Providing reliable tech since 2000</p>
