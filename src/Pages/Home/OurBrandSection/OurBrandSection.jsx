@@ -5,8 +5,7 @@ import brand_3 from '../../../assets/brands_logo/3.jpg'
 import brand_4 from '../../../assets/brands_logo/4.jpg'
 import brand_5 from '../../../assets/brands_logo/5.png'
 import brand_6 from '../../../assets/brands_logo/6.png'
-import brand_7 from '../../../assets/brands_logo/7.jpg'
-import brand_8 from '../../../assets/brands_logo/8.png'
+
 
 const OurBrandSection = () => {
     return (
