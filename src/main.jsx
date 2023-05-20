@@ -4,6 +4,7 @@ import './index.css'
 import {RouterProvider} from "react-router-dom";
 import router from './Routes/Route';
 import AuthProvider from './AuthProvider/AuthProvider';
+import 'react-tabs/style/react-tabs.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
