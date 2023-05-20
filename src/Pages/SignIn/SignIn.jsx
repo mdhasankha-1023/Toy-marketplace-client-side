@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
-    const {googleSignIn, signIn} = useContext(AuthContext)
+    const {googleSignIn, signIn, errorToast, successToast} = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || "/";
+    console.log(from)
 
     // handle signIn form
     const handleSignInForm = (event) => {
@@ -16,9 +22,12 @@ const SignIn = () => {
         signIn(email, password)
         .then(result => {
             console.log(result.user)
+            successToast('You are sign-in successfully')
+            form.reset()
+            navigate(from, {replace: true})
         })
         .catch(error => {
-            console.log(error.message)
+            errorToast(error.message)
         })
     }
 
@@ -28,9 +37,12 @@ const SignIn = () => {
         .then(result => {
             const loggedUser = result.user;
             console.log(loggedUser)
+            successToast('You are sign-in successfully')
+            navigate(from, {replace: true})
+            
         })
         .catch(error => {
-            console.log(error.message)
+            errorToast(error.message)
         })
     }
 
@@ -64,7 +76,7 @@ const SignIn = () => {
                             <FaGoogle size='2em' className='text-[#DE4032]'></FaGoogle>
                             <span className='ms-4'>Sign In with Google</span>
                         </button>
-                        
+                        <p className='text-center mt-4'>You have no account? <Link className='font-bold text-[#EA4A30]' to='/sign-up'>Sign up</Link></p>
                     </div>
                 </div>
             </div>

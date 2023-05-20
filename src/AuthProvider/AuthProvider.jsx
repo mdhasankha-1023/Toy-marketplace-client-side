@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../Firebase/Firebase.config';
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import Swal from 'sweetalert2';
 
 export const AuthContext = createContext(app)
 
@@ -13,6 +14,35 @@ const provider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    
+    // error message
+    const errorToast = (msg) => {
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.addEventListener('mouseenter', Swal.stopTimer)
+              toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+          })
+          
+          Toast.fire({
+            icon: 'error',
+            title: `${msg}`
+          })
+    }
+
+    // success message
+    const successToast = (msg) => {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: `${msg}`,
+          })
+    }
 
 
     // signUp with email&password
@@ -59,7 +89,9 @@ const AuthProvider = ({children}) => {
         githubSignIn,
         signUp,
         signIn,
-        logOut
+        logOut,
+        errorToast,
+        successToast
     }
 
 

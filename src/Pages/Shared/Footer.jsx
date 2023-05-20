@@ -31,7 +31,7 @@ const Footer = () => {
                 <div>
                     <span className="footer-title">Social Link</span>
                     <div className='flex gap-4'>
-                        <a className='p-2 border rounded-full bg-[#3b5998]'><FaFacebook size='2em'></FaFacebook></a>
+                        <a href='https://www.facebook.com/profile.php?id=100063140996982' className='p-2 border rounded-full bg-[#3b5998]'><FaFacebook size='2em'></FaFacebook></a>
                         <a className='p-2 border  rounded-full bg-[#00acee]'><FaTwitter size='2em'></FaTwitter></a>
                         <a className='p-2 border  rounded-full bg-white'><FaGithub className='text-black' size='2em'></FaGithub></a>
                     </div>

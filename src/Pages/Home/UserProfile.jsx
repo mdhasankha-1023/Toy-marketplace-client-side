@@ -19,7 +19,6 @@ const UserProfile = () => {
     const mouseHover = (value) => {
         setHovered(value)
     }
-    console.log(hovered)
 
     return (
         <div className="dropdown dropdown-end">

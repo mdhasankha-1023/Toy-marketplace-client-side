@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateProfile = () => {
-    const {user} = useContext(AuthContext);
+    const {user, successToast, errorToast} = useContext(AuthContext);
+    const navigate = useNavigate();
 console.log(user)
     // handle update form 
     const handleUpdateForm = (event) => {
@@ -17,10 +19,16 @@ console.log(user)
             displayName: name,
             photoURL: photoUrl,
         })
-        .then(() => {})
-        .catch(error => {
-            console.log(error)
+        .then(() => {
+            successToast('Your profile updated successfully')
         })
+        .catch(error => {
+            errorToast(error.message)
+        })
+    }
+
+    {
+        !user && navigate('/sign-in')
     }
 
 

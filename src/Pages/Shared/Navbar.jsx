@@ -6,7 +6,7 @@ import UserProfile from '../Home/UserProfile';
 
 const Navbar = () => {
     const { user } = useContext(AuthContext)
-    console.log(user)
+
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto justify-between">
             <div className="navbar-center lg:w-2/5 lg:navbar-start">
