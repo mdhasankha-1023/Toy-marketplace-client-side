@@ -12,7 +12,7 @@ const AllToys = () => {
         setSearchItem(event.target.value)
 
     }
-        const filterToys = loadedData.filter(toy => toy.toy_name.toLowerCase().includes(searchItem.toLowerCase()));
+        // const filterToys = loadedData.filter(toy => toy.toy_name.toLowerCase().includes(searchItem.toLowerCase()));
 
     
 
