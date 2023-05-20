@@ -20,7 +20,7 @@ const GallerySection = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto mt-8'>
+        <div className='w-11/12 mx-auto mt-32'>
             <h1 className='text-4xl font-bold text-center'>Our Toys Gallery</h1>
             <div className='w-full grid grid-cols-4 my-12'>
             {
