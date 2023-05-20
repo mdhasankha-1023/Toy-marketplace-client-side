@@ -9,6 +9,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddToys from "../Pages/AddToys/AddToys";
 import PrivetRoute from "./PrivetRoute/PrivetRoute";
 import AllToys from "../Pages/AllToys/AllToys";
+import BlogPage from "../Pages/BlogPage/BlogPage";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
                 path: '/all-toys',
                 element: <AllToys></AllToys>,
                 loader: () => fetch('http://localhost:5000/toys')
+            },
+            {
+                path: '/blog', 
+                element: <BlogPage></BlogPage>
             }
         ]
     },
