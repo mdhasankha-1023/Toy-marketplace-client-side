@@ -7,6 +7,8 @@ import SignIn from "../Pages/SignIn/SignIn";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import AddToys from "../Pages/AddToys/AddToys";
+import PrivetRoute from "./PrivetRoute/PrivetRoute";
+import AllToys from "../Pages/AllToys/AllToys";
 
 
 const router = createBrowserRouter([
@@ -26,7 +28,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-toys',
-                element: <AddToys></AddToys>
+                element: <PrivetRoute><AddToys></AddToys></PrivetRoute>
+            },
+            {
+                path: '/all-toys',
+                element: <AllToys></AllToys>,
+                loader: () => fetch('http://localhost:5000/toys')
             }
         ]
     },

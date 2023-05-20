@@ -9,7 +9,6 @@ const SignIn = () => {
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || "/";
-    console.log(from)
 
     // handle signIn form
     const handleSignInForm = (event) => {

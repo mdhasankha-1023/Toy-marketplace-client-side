@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AddToys = () => {
+    
     return (
         <div className="hero my-24">
             <div className="hero-content border w-4/5 rounded-lg bg-[#98D6E5]">
