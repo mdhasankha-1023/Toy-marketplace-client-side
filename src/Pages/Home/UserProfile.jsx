@@ -4,15 +4,17 @@ import { Link } from 'react-router-dom';
 import { FaPen, FaSignOutAlt } from 'react-icons/fa';
 
 const UserProfile = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, successToast, errorToast } = useContext(AuthContext);
     const [hovered, setHovered] = useState(false)
 
     // handle logOut btn
     const handleLogOutBtn = () => {
         logOut()
-            .then(() => { })
+            .then(() => { 
+                successToast('Successfully Sign Out')
+            })
             .catch(error => {
-                console.log(error)
+                errorToast(error.message)
             })
     }
 

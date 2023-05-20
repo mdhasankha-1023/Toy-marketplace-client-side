@@ -15,13 +15,13 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-80">
-                        <li className='mx-auto'><Link>Home</Link></li>
+                        <li className='mx-auto'><Link to='/'>Home</Link></li>
                         <li tabIndex={0} className='mx-auto'>
-                            <Link>All Toys</Link>
+                            <Link to='/all-toys'>All Toys</Link>
                         </li>
-                        <li className='mx-auto'><Link>My Toys</Link></li>
-                        <li className='mx-auto'><Link>Add a Toy</Link></li>
-                        <li className='mx-auto'><Link>Blog</Link></li>
+                        <li className='mx-auto'><Link to='/my-toys'>My Toys</Link></li>
+                        <li className='mx-auto'><Link to='/add-toys'>Add a Toy</Link></li>
+                        <li className='mx-auto'><Link to='/blog'>Blog</Link></li>
                         <div className="navbar-end mx-auto gap-2 btn-group btn-group-vertical">
                             <button className="btn-sm bg-[#F5B120] hover:bg-[#ac790c] text-white rounded-md">Sign in</button>
                             <button className="btn-sm bg-[#EA624C] hover:bg-[#b3402e] text-white rounded-md">Sign up</button>
@@ -38,8 +38,8 @@ const Navbar = () => {
                     <li tabIndex={0}>
                         <Link to='/all-toys'>All Toys</Link>
                     </li>
-                    <li><Link to='/my-toys'>My tToys</Link></li>
-                    <li><Link to='/add-a-toy'>Add a Toy</Link></li>
+                    <li><Link to='/my-toys'>My Toys</Link></li>
+                    <li><Link to='/add-toys'>Add a Toys</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
                 </ul>
             </div>

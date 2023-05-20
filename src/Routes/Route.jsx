@@ -6,6 +6,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
 import UpdateProfile from "../Pages/UpdateProfile/UpdateProfile";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import AddToys from "../Pages/AddToys/AddToys";
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: '/update-profile',
                 element: <UpdateProfile></UpdateProfile>
+            },
+            {
+                path: '/add-toys',
+                element: <AddToys></AddToys>
             }
         ]
     },
