@@ -1,11 +1,52 @@
-import React from 'react';
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import React, { useContext } from 'react';
+import { FaStar, FaStarHalfAlt, FaTrashAlt } from 'react-icons/fa';
 import Rating from 'react-rating';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
-const MyToy = ({ myToy }) => {
-    const {toy_name, seller_name, seller_email, img_url, price, rating, categoryName, available_quantity, details_description} = myToy;
+
+const MyToy = ({ myToy, setMyToys, myToys }) => {
+    const { successToast } = useContext(AuthContext)
+    const { toy_name, seller_name, seller_email, img_url, price, rating, categoryName, available_quantity, details_description, _id } = myToy;
+
+    // handleUpdateBtn
+    const handleDeleteBtn = (id) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/my-toys/${id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(myToy)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            const remaining = myToys.filter(toy => toy._id !== id)
+                            setMyToys(remaining)
+                            successToast('Successfully Deleted')
+                        }
+                    })
+            }
+        })
+
+
+    }
+
+
     return (
-        <div className='w-11/12 mx-auto my-20'>
+        <div className='w-11/12 mx-auto my-20 relative'>
             <div className="hero py-14 bg-base-200">
                 <div className="hero-content flex-col lg:flex-row items-start">
                     <img src={img_url} className="max-w-sm rounded-lg " />
@@ -37,9 +78,13 @@ const MyToy = ({ myToy }) => {
                             <p className='font-bold'>Details:</p>
                             <p>{details_description}</p>
                         </div>
+                        <div className='mt-12 flex gap-4'>
+                            <Link to={`/update-my-toy/${_id}`}><button className="btn btn-sm bg-[#EA624C] border-none">Update</button></Link>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button onClick={() => handleDeleteBtn(_id)} className="btn btn-sm bg-[#EA624C] border-none absolute -left-2 -top-2 rounded-full"><FaTrashAlt></FaTrashAlt></button>
         </div>
     );
 };

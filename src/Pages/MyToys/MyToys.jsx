@@ -6,10 +6,10 @@ const MyToys = () => {
     const {user, errorToast} = useContext(AuthContext)
     const [myToys, setMyToys] = useState([])
 
-    console.log(myToys)
+    
     // load my toys 
     useEffect( () => {
-        fetch(`https://toy-marketplace-server-mdhasankhan-123.vercel.app/my-toys?seller_email=${user.email}`)
+        fetch(`http://localhost:5000/my-toys?seller_email=${user.email}`)
         .then(res => res.json())
         .then(data => {
             setMyToys(data)
@@ -24,7 +24,9 @@ const MyToys = () => {
             {
                 myToys?.map(myToy => <MyToy
                 key={myToy._id}
-                myToy={myToy}>  
+                myToy={myToy}
+                setMyToys={setMyToys}
+                myToys={myToys}>  
                 </MyToy>)
             }
         </div>

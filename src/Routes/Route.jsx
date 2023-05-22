@@ -12,6 +12,7 @@ import AllToys from "../Pages/AllToys/AllToys";
 import BlogPage from "../Pages/BlogPage/BlogPage";
 import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import MyToys from "../Pages/MyToys/MyToys";
+import UpdateMyToy from "../Pages/UpdateMyToy/UpdateMyToy";
 
 
 const router = createBrowserRouter([
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://toy-marketplace-server-mdhasankhan-123.vercel.app/toys')
+                loader: () => fetch('http://localhost:5000/toys')
             },
             {
                 path: '/update-profile',
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
             {
                 path: '/all-toys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('https://toy-marketplace-server-mdhasankhan-123.vercel.app/toys')
+                loader: () => fetch('http://localhost:5000/toys')
             },
             {
                 path: '/blog', 
@@ -45,11 +46,17 @@ const router = createBrowserRouter([
             {
                 path: '/toy-details/:id', 
                 element: <PrivetRoute><ToyDetails></ToyDetails></PrivetRoute>,
-                loader: ({params}) => fetch(`https://toy-marketplace-server-mdhasankhan-123.vercel.app/toys/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
             },
             {
                 path: '/my-toys',
                 element: <PrivetRoute><MyToys></MyToys></PrivetRoute>
+            },
+            {
+                path: '/update-my-toy/:id',
+                element: <PrivetRoute><UpdateMyToy></UpdateMyToy></PrivetRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/my-toys/${params.id}`)
+                
             }
         ]
     },
