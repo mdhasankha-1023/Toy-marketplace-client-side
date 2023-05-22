@@ -20,7 +20,7 @@ const AddToys = () => {
         const toyInfo = {toy_name, seller_name, seller_email, img_url, price, rating, categoryName, available_quantity, details_description}
         console.log(toyInfo)
 
-            fetch('http://localhost:5000/my-toys', {
+            fetch('https://toy-marketplace-server-drab.vercel.app/my-toys', {
                 method: 'POST',
                 headers: {
                     'content-type' : 'application/json'

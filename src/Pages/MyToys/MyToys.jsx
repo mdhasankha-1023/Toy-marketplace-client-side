@@ -9,7 +9,7 @@ const MyToys = () => {
     
     // load my toys 
     useEffect( () => {
-        fetch(`http://localhost:5000/my-toys?seller_email=${user.email}`)
+        fetch(`https://toy-marketplace-server-drab.vercel.app/my-toys?seller_email=${user.email}`)
         .then(res => res.json())
         .then(data => {
             setMyToys(data)

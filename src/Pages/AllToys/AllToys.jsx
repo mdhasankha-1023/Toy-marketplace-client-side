@@ -4,29 +4,29 @@ import ToyRow from '../ToyRow/ToyRow';
 
 const AllToys = () => {
     const loadedData = useLoaderData()
-    const [searchItem, setSearchItem] = useState('')
-
+    const [toys, setToys] = useState(loadedData)
+    const [searchText, setSearchText] = useState('')
+console.log(searchText)
     // handle Search Button
-    const handleSearchInput = (event) => {
-        event.preventDefault();
-        setSearchItem(event.target.value)
-
+    const handleSearchBtn = () => {
+        fetch(`http://localhost:5000/searchByName&subCategory/${searchText}`)
+        .then(res => res.json())
+        .then(data => setToys(data))
     }
-        // const filterToys = loadedData.filter(toy => toy.toy_name.toLowerCase().includes(searchItem.toLowerCase()));
 
     
 
     return (
         <div className='w-11/12 mx-auto'>
             <h3 className='text-center text-4xl font-bold my-14 underline'>All Toys</h3>
-            <form className="my-8">
+            <div className="my-8">
                 <div className="input-group">
-                    <input type="text" onChange={handleSearchInput} placeholder="Search…" value={searchItem} className="input input-bordered" />
-                    <button  className="btn btn-square">
+                    <input type="text" onChange={(e) => setSearchText(e.target.value)} placeholder="Search…" className="input input-bordered" />{" "}
+                    <button onClick={handleSearchBtn}  className="btn btn-square">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
                 </div>
-            </form>
+            </div>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head */}
@@ -42,7 +42,7 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            loadedData.map(toy => <ToyRow
+                            toys.map(toy => <ToyRow
                                 key={toy._id}
                                 toy={toy}></ToyRow>)
                         }
