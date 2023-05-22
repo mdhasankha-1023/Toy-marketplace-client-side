@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyRow from '../ToyRow/ToyRow';
+import useTitle from '../../Hooks/useTitle';
 
 const AllToys = () => {
     const loadedData = useLoaderData()
     const [toys, setToys] = useState(loadedData)
     const [searchText, setSearchText] = useState('')
-console.log(searchText)
+    useTitle('All toys')
+
     // handle Search Button
     const handleSearchBtn = () => {
         fetch(`http://localhost:5000/searchByName&subCategory/${searchText}`)
@@ -22,7 +24,7 @@ console.log(searchText)
             <div className="my-8">
                 <div className="input-group">
                     <input type="text" onChange={(e) => setSearchText(e.target.value)} placeholder="Search…" className="input input-bordered" />{" "}
-                    <button onClick={handleSearchBtn}  className="btn btn-square">
+                    <button onClick={handleSearchBtn}  className="btn btn-square bg-[#EA624C] border-none">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
                 </div>

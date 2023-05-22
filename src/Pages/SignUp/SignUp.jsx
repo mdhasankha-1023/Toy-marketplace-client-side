@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 
 const SignUp = () => {
     const {signUp,  errorToast, successToast} = useContext(AuthContext)
     const navigate = useNavigate();
+    useTitle('Sign up')
 
     // handle signUp form
     const handleSignUpForm = event => {

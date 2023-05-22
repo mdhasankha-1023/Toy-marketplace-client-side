@@ -5,7 +5,15 @@ import clint3 from '../../../assets/Clients_pic/client_3.jpg'
 
 const HappyClintSection = () => {
     return (
-        <div className='w-full bg-[#F5B120] py-8 my-16'>
+        <div data-aos="zoom-in"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+            className='w-full bg-[#F5B120] py-8 my-16'>
             <h1 className='text-center text-4xl font-bold text-white'>Our Happy Clients say</h1>
             <div className="carousel w-full">
                 <div id="item1" className="carousel-item w-full flex-col p-8">
@@ -53,7 +61,7 @@ const HappyClintSection = () => {
                     </div>
 
                 </div>
-                
+
             </div>
             <div className="flex justify-center w-full py-2 gap-2">
                 <a href="#item1" className="btn btn-xs">1</a>

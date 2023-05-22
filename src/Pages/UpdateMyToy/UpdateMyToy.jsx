@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const UpdateMyToy = () => {
     const {successToast, errorToast} = useContext(AuthContext)
     const loadedData = useLoaderData()
     const { _id, toy_name, seller_name, seller_email, img_url, price, rating, categoryName, available_quantity, details_description } = loadedData;
-    console.log(loadedData)
+    useTitle('Update my toy')
 
     // handle Update My Toy Form
     const handleUpdateMyToyForm = (event) => {
@@ -44,7 +45,7 @@ const UpdateMyToy = () => {
             <div className="hero-content border w-4/5 rounded-lg bg-[#98D6E5]">
                 <div className="card w-full">
                     <div className="card-body">
-                        <h2 className='text-center font-bold text-3xl underline'>Add A toy</h2>
+                        <h2 className='text-center font-bold text-3xl underline'>Update</h2>
                         <form onSubmit={handleUpdateMyToyForm}>
                             {/* row-1 */}
                             <div className='flex gap-4 w-full'>
@@ -113,7 +114,7 @@ const UpdateMyToy = () => {
                                 <textarea name="description" className='w-full rounded-md h-52 p-4' placeholder='Toy details' defaultValue={details_description} ></textarea>
                             </div>
                             <div className="form-control mt-6">
-                                <input className='btn text-white border-none bg-[#EA624C]' type="submit" value="ADD" />
+                                <input className='btn text-white border-none bg-[#EA624C]' type="submit" value="Update" />
                             </div>
                         </form>
                     </div>

@@ -7,6 +7,7 @@ import UserProfile from '../Home/UserProfile';
 const Navbar = () => {
     const { user } = useContext(AuthContext)
 
+
     return (
         <div className="navbar bg-base-100 w-11/12 mx-auto justify-between">
             <div className="navbar-center lg:w-2/5 lg:navbar-start">
@@ -20,7 +21,7 @@ const Navbar = () => {
                             <NavLink to='/all-toys'>All Toys</NavLink>
                         </li>
                         <li className='mx-auto'><NavLink to='/my-toys'>My Toys</NavLink></li>
-                        <li className='mx-auto'><NavLink to='/add-toys'>Add a Toy</NavLink></li>
+                        <li className='mx-auto'><NavLink to='/add-toy'>Add a Toy</NavLink></li>
                         <li className='mx-auto'><NavLink to='/blog'>Blog</NavLink></li>
                         <div className="navbar-end mx-auto gap-2 btn-group btn-group-vertical">
                             <button className="btn-sm bg-[#F5B120] hover:bg-[#ac790c] text-white rounded-md">Sign in</button>
@@ -34,13 +35,13 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><NavLink to='/' >Home</NavLink></li>
-                    <li tabIndex={0}>
+                    <li className='me-2'><NavLink activeClassName="rounded-sm text-gray-200 bg-blue-gray-dark"  to='/' >Home</NavLink></li>
+                    <li className='me-2' tabIndex={0}>
                         <NavLink to='/all-toys'>All Toys</NavLink>
                     </li>
-                    <li><NavLink to='/my-toys'>My Toys</NavLink></li>
-                    <li><NavLink to='/add-toys'>Add a Toys</NavLink></li>
-                    <li><NavLink to='/blog'>Blog</NavLink></li>
+                    <li className='me-2'><NavLink className='' to='/my-toys'>My Toys</NavLink></li>
+                    <li className='me-2'><NavLink to='/add-toy'>Add a Toy</NavLink></li>
+                    <li className='me-2'><NavLink to='/blog'>Blog</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end  gap-4 btn-group invisible lg:visible">

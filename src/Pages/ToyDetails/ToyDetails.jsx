@@ -2,11 +2,13 @@ import React from 'react';
 import { FaStar, FaStarHalf, FaStarHalfAlt } from 'react-icons/fa';
 import Rating from 'react-rating';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const ToyDetails = () => {
     const toyData = useLoaderData();
     const { img_url, toy_name, seller_name, seller_email, price, rating, available_quantity, details_description } = toyData;
-    console.log(toyData)
+    useTitle('Toy details')
+    
     return (
         <div className='w-11/12 mx-auto my-20'>
             <h1 className='text-center text-4xl font-bold my-14'>This is Toy details</h1>

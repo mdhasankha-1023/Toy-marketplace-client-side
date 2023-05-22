@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 
 const AddToys = () => {
-    const {successToast, errorToast} = useContext(AuthContext)
+    const {successToast, errorToast} = useContext(AuthContext);
+    useTitle('Add a toy')
 
     // handleAddToyForm
     const handleAddToyForm = (event) => {

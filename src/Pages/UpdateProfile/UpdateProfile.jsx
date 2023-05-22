@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const UpdateProfile = () => {
     const {user, successToast, errorToast} = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('Update profile')
 console.log(user)
     // handle update form 
     const handleUpdateForm = (event) => {

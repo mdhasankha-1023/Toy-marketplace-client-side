@@ -7,8 +7,7 @@ const ActiveRoutes = ({to, children}) => {
         <div>
             <NavLink
             to={to}
-            className={isActive => (!isActive ? "text-red-500" : "")
-              }
+            
             >
                 {children}
             </NavLink>
