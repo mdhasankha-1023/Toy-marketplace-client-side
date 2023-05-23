@@ -2,12 +2,12 @@ import React from 'react';
 import './ActiveRoutes.css'
 import { NavLink } from 'react-router-dom';
 
-const ActiveRoutes = ({to, children}) => {
+const ActiveRoutes = ({ to, children }) => {
     return (
         <div>
             <NavLink
-            to={to}
-            
+                to={to}
+                className={({ isActive }) => isActive ? "active" : ""}
             >
                 {children}
             </NavLink>

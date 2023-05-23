@@ -1,3 +1,6 @@
-.unselected{
+.active{
     background-color: red !important;
+}
+.active:hover{
+    background-color: red;
 }
