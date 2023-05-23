@@ -5,30 +5,30 @@ import { FaBeer, FaFacebook, FaGithub, FaTwitter } from 'react-icons/fa';
 const Footer = () => {
     return (
         <>
-            <footer className="footer p-10 bg-[#EA624C] font-bold text-white mt-8">
-                <div>
+            <footer className="footer grid-cols-1 md:grid-cols-4 p-10 bg-[#EA624C] font-bold text-white mt-8">
+                <div className='w-full justify-items-center'>
                     <img className='w-[200px]' src={logo} alt="" />
                     <p className='font-bold'>TOY CARS Industries Ltd.<br />Providing reliable tech since 2000</p>
                 </div>
-                <div>
+                <div className='w-full justify-items-center'>
                     <span className="footer-title">Links</span>
                     <a className="link link-hover">All Toys</a>
                     <a className="link link-hover">My Toys</a>
                     <a className="link link-hover">Blog</a>
                 </div>
-                <div>
+                <div className='w-full justify-items-center'>
                     <span className="footer-title">Company</span>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
                     
                 </div>
-                <div>
+                <div className='w-full justify-items-center'>
                     <span className="footer-title">Legal</span>
                     <a className="link link-hover">Terms of use</a>
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                 </div>
-                <div>
+                <div className='w-full justify-items-center'>
                     <span className="footer-title">Social Link</span>
                     <div className='flex gap-4'>
                         <a href='https://www.facebook.com/profile.php?id=100063140996982' className='p-2 border rounded-full bg-[#3b5998]'><FaFacebook size='2em'></FaFacebook></a>

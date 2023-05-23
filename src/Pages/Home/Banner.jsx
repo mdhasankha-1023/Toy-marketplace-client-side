@@ -20,8 +20,8 @@ const Banner = () => {
                 data-aos-mirror="true"
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center" className="w-full image-full relative mt-8">
-                <figure><img src={banner} alt="Shoes" /></figure>
-                <div className="card-body absolute top-0 left-0 h-full">
+                <figure className='w-full'><img className='w-full' src={banner} alt="Shoes" /></figure>
+                <div className="card-body absolute top-0 left-0 md:h-full w-1/2">
                     <h2 className="card-title md:mt-24 mt-8 md:text-5xl text-white font-bold">PICK THE BEST TOY CAR <br /> FOR YOUR KIDS</h2>
                     <p className='text-semibold flex-grow-0'>Make play time a blast with our finest toys and games!</p>
                     <div className="card-actions justify-start m-0">

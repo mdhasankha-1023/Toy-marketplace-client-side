@@ -11,7 +11,7 @@ const AllToys = () => {
 
     // handle Search Button
     const handleSearchBtn = () => {
-        fetch(`http://localhost:5000/searchByName&subCategory/${searchText}`)
+        fetch(`https://toy-marketplace-server-drab.vercel.app/searchByName&subCategory/${searchText}`)
         .then(res => res.json())
         .then(data => setToys(data))
     }

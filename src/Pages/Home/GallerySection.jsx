@@ -29,8 +29,8 @@ const GallerySection = () => {
             data-aos-once="false"
             data-aos-anchor-placement="top-center"
             className='w-11/12 mx-auto mt-32'>
-            <h1 className='text-4xl font-bold text-center'>Our Toys Gallery</h1>
-            <div className='w-full grid grid-cols-4 my-12'>
+            <h1 className='md:text-4xl font-bold text-center'>Our Toys Gallery</h1>
+            <div className='w-full grid grid-cols-2 md:grid-cols-4 my-12'>
                 {
                     data.map(data => <GalleryCard
                         key={data._id}

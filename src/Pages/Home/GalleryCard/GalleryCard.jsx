@@ -13,9 +13,9 @@ const GalleryCard = ({ data }) => {
           })
     }
     return (
-        <div className='w-full'>
-            <div className="carousel-item  w-[12rem] h-[10rem] border mx-auto m-1 p-5 cursor-pointer">
-            <img src={img_url} onClick={handleModal} className="w-full" alt="Tailwind CSS Carousel component" />
+        <div className='md:w-full mx-auto'>
+            <div className="carousel-item w-[7rem]  md:w-[12rem] md:h-[10rem] border mx-auto m-1 p-5 cursor-pointer">
+            <img src={img_url} onClick={handleModal} className="md:w-full mx-auto" alt="Tailwind CSS Carousel component" />
         </div>
         </div>
     );

@@ -23,7 +23,7 @@ const MyToys = () => {
     // handle sort by price
     // const handleSortBtn = (value) => {
         
-    //         fetch(`http://localhost:5000/my-toys?value=price&type=${value}`)
+    //         fetch(`https://toy-marketplace-server-drab.vercel.app/my-toys?value=price&type=${value}`)
     //             .then(res => res.json())
     //             .then(data => {
     //                 setMyToys(data)

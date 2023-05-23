@@ -19,8 +19,9 @@ const ShopByCategory = () => {
       data-aos-easing="ease-in-out"
       data-aos-mirror="true"
       data-aos-once="false"
-      data-aos-anchor-placement="top-center">
-      <h1 className='text-4xl text-center font-bold'>Shop By Category</h1>
+      data-aos-anchor-placement="top-center"
+      className='w-11/12 mx-auto my-20'>
+      <h1 className='text-4xl text-center font-bold my-8'>Shop By Category</h1>
       <Tabs forceRenderTabPanel defaultIndex={1}>
         <TabList>
           <Tab>The Simpsons</Tab>
